@@ -1,3 +1,6 @@
-<p>
-  manufacturing works!
-</p>
+<!-- <p>{{items | json}}</p> -->
+<ul>
+<ng-container *ngFor="let recipe of recipes">
+  <li>{{recipe.label}} [{{recipe.tier}}]: <ng-container *ngFor="let input of recipe.inputs">{{input.name}}, </ng-container></li>
+</ng-container>
+</ul>

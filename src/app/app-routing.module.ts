@@ -8,6 +8,7 @@ import { SalesComponent } from './panels/sales/sales.component';
 import { AutomationComponent } from './panels/automation/automation.component';
 
 const routes: Routes = [
+  {path: '', component: PurchasingComponent},
   {path: 'purchasing', component: PurchasingComponent},
   {path: 'manufacturing', component: ManufacturingComponent},
   {path: 'inventory', component: InventoryComponent},
