@@ -1,20 +1,21 @@
 <nav id="nav">
-  <h1>The Factory</h1>
-  <a routerLink="/purchasing" routerLinkActive="active">Purchasing</a>
-  <a routerLink="/manufacturing" routerLinkActive="active">Manufacturing</a>
-  <a routerLink="/inventory" routerLinkActive="active">Inventory</a>
-  <a routerLink="/sales" routerLinkActive="active">Sales</a>
-  <a routerLink="/automation" routerLinkActive="active">Automation</a>
-  <a routerLink="/game" routerLinkActive="active">Game</a>
+	<h1>The Factory</h1>
+	<a routerLink="/purchasing" routerLinkActive="active">Purchasing</a>
+	<a routerLink="/manufacturing" routerLinkActive="active">Manufacturing</a>
+	<a routerLink="/inventory" routerLinkActive="active">Inventory</a>
+	<a routerLink="/sales" routerLinkActive="active">Sales</a>
+	<a routerLink="/automation" routerLinkActive="active">Automation</a>
+	<a routerLink="/game" routerLinkActive="active">Game</a>
 </nav>
 <div id="outlet">
-  <router-outlet></router-outlet>
+	<router-outlet></router-outlet>
 </div>
 
 <div id="log">
-  <p>{{updateService.tick}} tick</p>
-  <p>#{{logs.length}} {{updateService.log | async}}</p>
-  <ul>
-    <li *ngFor="let entry of logs.slice(-10); index as i">{{entry}}</li>
-  </ul>
+	<p>{{updateService.tick}} tick</p>
+	<p>#{{logs.length}} {{updateService.log | async}}</p>
+	<ul>
+		<li *ngFor="let entry of logs.slice(-10); index as i">{{entry}}</li>
+		<li>Todo: Refactor data pieces out into a data service, single source of truth and all that jazz.</li>
+	</ul>
 </div>
