@@ -1,0 +1,45 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  > * {
+    flex: 1 1 auto;
+  }
+}
+
+nav {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: baseline;
+  background: #CCC;
+
+  > * {
+    margin: 8px;
+  }
+  h1 {
+    font-size: 24px;
+    margin-right: 16px;
+    font-weight: 700;
+  }
+  a {
+    padding: 4px 8px;
+    background: #FAFAFA;
+    border: 1px solid #333;
+    border-radius: 8px;
+    &.active {
+      background: #9AF;
+      border-color: #9AF;
+    }
+  }
+}
+
+#outlet {
+  flex: 1 1 auto;
+  padding: 8px;
+}
+
+#log {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  width: 15vw;
+}
