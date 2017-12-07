@@ -1,3 +1,4 @@
+import { UpdateService } from './update.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -34,7 +35,9 @@ import { AccountBalanceGraphComponent } from './account-balance-graph/account-ba
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    UpdateService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
