@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ItemModel } from '../../item.model';
 
 @Component({
   selector: 'app-inventory',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-
+  items: ItemModel[] = [];
   constructor() { }
 
   ngOnInit() {
+    this.items = ItemModel.init();
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeModel } from '../../recipe.model';
 
 @Component({
   selector: 'app-manufacturing',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./manufacturing.component.scss']
 })
 export class ManufacturingComponent implements OnInit {
-
+  recipes: RecipeModel[] = [];
   constructor() { }
 
   ngOnInit() {
+    this.recipes = RecipeModel.init();
   }
 
 }
