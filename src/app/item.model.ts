@@ -1,2 +1,2 @@
-export class Item.Model {
+export class ItemModel {
 }

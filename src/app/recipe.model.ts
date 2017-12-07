@@ -1,2 +1,2 @@
-export class Recipe.Model {
+export class RecipeModel {
 }
