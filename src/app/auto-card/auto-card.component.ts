@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-auto-card',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auto-card.component.scss']
 })
 export class AutoCardComponent implements OnInit {
-
+  @Output() pause = new EventEmitter;
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+
+import { ItemModel } from '../item.model';
 
 @Component({
   selector: 'app-sales-card',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sales-card.component.scss']
 })
 export class SalesCardComponent implements OnInit {
-
+  @Input() item: ItemModel;
+  @Output() cancel = new EventEmitter;
   constructor() { }
 
   ngOnInit() {

@@ -68,23 +68,30 @@ const recipes: [string, Tiers, string, string[]][] = [
     ]],
   ['Conveyor', Tiers.TIER_2,
     'Conveyor', [
-      'Belt', 'Gear', 'Gear', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Motor'
+      'Belt', 'Gear', 'Gear', 'Metal wheel', 'Metal wheel', 'Metal wheel',
+      'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel',
+      'Motor'
     ]],
   ['Lifter', Tiers.TIER_2,
     'Lifter', [
-      'Metal', 'Metal', 'Metal', 'Cable', 'Cable', 'Hose', 'Hose', 'Motor', 'Pump'
+      'Metal', 'Metal', 'Metal', 'Cable', 'Cable', 'Hose', 'Hose', 'Motor',
+      'Pump'
     ]],
   ['Logic unit', Tiers.TIER_2,
     'Logic unit', [
-      'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit', 'Circuit'
+      'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit',
+      'Circuit'
     ]],
   ['Mover', Tiers.TIER_2,
     'Mover', [
-      'Metal', 'Metal', 'Metal', 'Gear', 'Gear', 'Gear', 'Gear', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Motor', 'Motor'
+      'Metal', 'Metal', 'Metal', 'Gear', 'Gear', 'Gear', 'Gear',
+      'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Motor',
+      'Motor'
     ]],
   ['Road', Tiers.TIER_2,
     'Road', [
-      'Concrete', 'Concrete', 'Concrete', 'Concrete', 'Adv concrete', 'Adv concrete'
+      'Concrete', 'Concrete', 'Concrete', 'Concrete', 'Adv concrete',
+      'Adv concrete'
     ]],
   ['Support', Tiers.TIER_2,
     'Support', [
@@ -96,27 +103,35 @@ const recipes: [string, Tiers, string, string[]][] = [
     ]],
   ['Widget', Tiers.TIER_2,
     'Widget', [
-      'Metal', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Wire', 'Wire', 'Circuit'
+      'Metal', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Wire', 'Wire',
+      'Circuit'
     ]],
   ['Toy car', Tiers.TIER_2,
     'Toy car', [
-      'Metal', 'Paint', 'Plastic', 'Plastic', 'Plastic', 'Plastic wheel', 'Plastic wheel', 'Plastic wheel', 'Plastic wheel', 'Box'
+      'Metal', 'Paint', 'Plastic', 'Plastic', 'Plastic', 'Plastic wheel',
+      'Plastic wheel', 'Plastic wheel', 'Plastic wheel', 'Box'
     ]],
   ['Water gun', Tiers.TIER_2,
     'Water gun', [
-      'Paint', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Hose', 'Hose', 'Box'
+      'Paint', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Plastic',
+      'Hose', 'Hose', 'Box'
     ]],
   ['Adv logic unit', Tiers.TIER_3,
     'Adv logic unit', [
-      'Wire', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit', 'Circuit', 'Logic unit', 'Logic unit'
+      'Wire', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit',
+      'Circuit', 'Logic unit', 'Logic unit'
     ]],
   ['Assembly line', Tiers.TIER_3,
     'Assembly line', [
-      'Air gun', 'Air gun', 'Arm', 'Arm', 'Conveyor', 'Conveyor', 'Conveyor', 'Lifter', 'Mover'
+      'Air gun', 'Air gun', 'Arm', 'Arm', 'Conveyor', 'Conveyor', 'Conveyor',
+      'Lifter', 'Mover'
     ]],
   ['Jet engine', Tiers.TIER_3,
     'Jet engine', [
-      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Hose', 'Hose', 'Hose', 'Hose', 'Hose', 'Hose', 'Pump', 'Pump', 'Pump', 'Pump', 'Thing-a-ma-jig'
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal',
+      'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire',
+      'Wire', 'Wire', 'Wire', 'Hose', 'Hose', 'Hose', 'Hose', 'Hose', 'Hose',
+      'Pump', 'Pump', 'Pump', 'Pump', 'Thing-a-ma-jig'
     ]],
   ['Sensor', Tiers.TIER_3,
     'Sensor', [
@@ -124,31 +139,47 @@ const recipes: [string, Tiers, string, string[]][] = [
     ]],
   ['Bridge', Tiers.TIER_3,
     'Bridge', [
-      'Road', 'Road', 'Road', 'Road', 'Road', 'Road', 'Support', 'Support', 'Support', 'Support', 'Support', 'Support'
+      'Road', 'Road', 'Road', 'Road', 'Road', 'Road', 'Support', 'Support',
+      'Support', 'Support', 'Support', 'Support'
     ]],
   ['Forklift', Tiers.TIER_3,
     'Forklift', [
-      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Metal wheel', 'Motor', 'Motor', 'Box', 'Box', 'Box', 'Box'
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Rubber', 'Rubber',
+      'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Rubber', 'Metal wheel',
+      'Metal wheel', 'Metal wheel', 'Metal wheel', 'Motor', 'Motor', 'Box',
+      'Box', 'Box', 'Box'
     ]],
   ['Radio tower', Tiers.TIER_3,
     'Radio tower', [
-      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Support', 'Support', 'Support', 'Support'
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal',
+      'Metal', 'Metal', 'Metal', 'Metal', 'Wire', 'Wire', 'Wire', 'Wire',
+      'Wire', 'Wire', 'Support', 'Support', 'Support', 'Support'
     ]],
   ['Tablet computer', Tiers.TIER_3,
     'Tablet computer', [
-      'Plastic', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit', 'Logic unit', 'Box'
+      'Plastic', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit',
+      'Logic unit', 'Box'
     ]],
   ['Drone', Tiers.TIER_4,
     'Drone', [
-      'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Rare metal', 'Motor', 'Motor', 'Motor', 'Motor', 'Adv logic unit', 'Sensor', 'Sensor'
+      'Plastic', 'Plastic', 'Plastic', 'Plastic', 'Rare metal', 'Motor',
+      'Motor', 'Motor', 'Motor', 'Adv logic unit', 'Sensor', 'Sensor'
     ]],
   ['Jet', Tiers.TIER_4,
     'Jet', [
-      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Adv logic unit', 'Adv logic unit', 'Adv logic unit', 'Adv logic unit', 'Adv logic unit', 'Adv logic unit', 'Jet engine', 'Jet engine', 'Jet engine', 'Jet engine', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor'
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal',
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal',
+      'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal', 'Metal',
+      'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire',
+      'Wire', 'Wire', 'Wire', 'Adv logic unit', 'Adv logic unit',
+      'Adv logic unit', 'Adv logic unit', 'Adv logic unit', 'Adv logic unit',
+      'Jet engine', 'Jet engine', 'Jet engine', 'Jet engine', 'Sensor',
+      'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor'
     ]],
   ['Oculus Rift', Tiers.TIER_4,
     'Oculus Rift', [
-      'Plastic', 'Plastic', 'Rare metal', 'Rare metal', 'Wire', 'Wire', 'Wire', 'Wire', 'Widget', 'Widget', 'Sensor', 'Sensor'
+      'Plastic', 'Plastic', 'Rare metal', 'Rare metal', 'Wire', 'Wire',
+      'Wire', 'Wire', 'Widget', 'Widget', 'Sensor', 'Sensor'
     ]],
   ['Builder: Tier 1', Tiers.BUILDER,
     'Builder: Tier 1', [
@@ -191,8 +222,8 @@ export class RecipeModel {
     outputLabel: string,
     inputLabels: string[]
   ) {
-    for (let string of inputLabels) {
-      this.inputs.push(ItemModel.list.get(string));
+    for (const inputLabel of inputLabels) {
+      this.inputs.push(ItemModel.list.get(inputLabel));
     }
     this.output = ItemModel.list.get(outputLabel);
     RecipeModel.list.set(label, this);
@@ -209,5 +240,9 @@ export class RecipeModel {
       arr.push(new RecipeModel(label, tier, outputLabel, inputLabels));
     }
     return arr;
+  }
+
+  make() {
+    console.log('Ooo. Shiny.');
   }
 }

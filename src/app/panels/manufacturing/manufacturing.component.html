@@ -1,6 +1,4 @@
 <!-- <p>{{items | json}}</p> -->
-<ul>
 <ng-container *ngFor="let recipe of recipes">
-  <li>{{recipe.label}} [{{recipe.tier}}]: <ng-container *ngFor="let input of recipe.inputs">{{input.name}}, </ng-container></li>
+  <app-recipe-card [recipe]="recipe"></app-recipe-card>
 </ng-container>
-</ul>

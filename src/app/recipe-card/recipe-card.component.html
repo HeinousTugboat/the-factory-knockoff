@@ -1,0 +1,3 @@
+<button (click)="recipe.make()">Make!</button>
+{{recipe.label}} <ng-container *ngFor="let item of recipe.inputs">{{item.name}} [{{item.current}}] </ng-container>
+<br />
