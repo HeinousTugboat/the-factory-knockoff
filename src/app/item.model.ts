@@ -75,15 +75,15 @@ export class ItemModel {
   retail = false;
   current = 0;
   total = 0;
-  buyCost: number;
+  buyPrice: number;
 
   constructor(
       public name: string,
       public tier: Tiers,
-      public saleCost: number, option?: number | boolean) {
+      public salePrice: number, option?: number | boolean) {
 
     if (typeof option === 'number') {
-      this.buyCost = option;
+      this.buyPrice = option;
     }
     if (typeof option === 'boolean') {
       this.retail = option;

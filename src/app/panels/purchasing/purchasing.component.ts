@@ -22,7 +22,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.items$ = this.dataService.items$.subscribe(items => {
-      this.items = items.filter(x => x.buyCost > 0);
+      this.items = items.filter(x => x.buyPrice > 0);
     });
   }
 
