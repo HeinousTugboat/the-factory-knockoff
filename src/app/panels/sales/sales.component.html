@@ -1,3 +1,4 @@
-<p>
-  sales works!
-</p>
+<!-- <p>{{items | json}}</p> -->
+<ng-container *ngFor="let item of items">
+  <app-sales-card [item]="item"></app-sales-card>
+</ng-container>
