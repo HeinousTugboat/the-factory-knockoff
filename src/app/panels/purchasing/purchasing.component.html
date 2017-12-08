@@ -1,4 +1,8 @@
 <!-- <p>{{items | json}}</p> -->
 <ng-container *ngFor="let item of items">
-  <app-purchase-card [item]="item" (purchase)="purchase(item)"></app-purchase-card>
+  <app-purchase-card 
+    [item]="item" 
+    [toPurchase]="0" 
+    (increase)="increase(item)" 
+    (decrease)="decrease(item)"></app-purchase-card>
 </ng-container>

@@ -8,9 +8,10 @@ import { ItemModel } from '../item.model';
   styleUrls: ['./purchase-card.component.scss']
 })
 export class PurchaseCardComponent implements OnInit {
+  @Input() toPurchase: number;
   @Input() item: ItemModel;
-  @Output() sell = new EventEmitter;
-  @Output() purchase = new EventEmitter;
+  @Output() decrease = new EventEmitter;
+  @Output() increase = new EventEmitter;
   constructor() { }
 
   ngOnInit() {

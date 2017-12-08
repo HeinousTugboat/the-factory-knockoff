@@ -14,6 +14,14 @@ export class PurchasingComponent implements OnInit, OnDestroy {
   private items$: Subscription;
   constructor(private dataService: DataService) { }
 
+  increase(item: ItemModel) {
+    console.log(item.name+' +1');
+  }
+
+  decrease(item: ItemModel) {
+    console.log(item.name+' +1');
+  }
+
   purchase(item: ItemModel) {
     item.current++;
     console.log(`buying one! ${item.name} [${item.current}]`);
@@ -22,7 +30,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.items$ = this.dataService.items$.subscribe(items => {
-      this.items = items.filter(x => x.buyCost > 0);
+      this.items = items.filter(x => x.buyPrice > 0);
     });
   }
 
