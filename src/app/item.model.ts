@@ -78,8 +78,8 @@ export class ItemModel {
   buyCost: number;
 
   constructor(
-      public name: string, 
-      public tier: Tiers, 
+      public name: string,
+      public tier: Tiers,
       public saleCost: number, option?: number | boolean) {
 
     if (typeof option === 'number') {
@@ -88,7 +88,9 @@ export class ItemModel {
     if (typeof option === 'boolean') {
       this.retail = option;
     }
-
+    if (tier === Tiers.RESOURCE) {
+      this.available = true;
+    }
     ItemModel.list.set(name, this);
   }
 
