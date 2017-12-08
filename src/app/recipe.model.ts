@@ -241,4 +241,8 @@ export class RecipeModel {
     }
     return arr;
   }
+
+  make() {
+    console.log('Ooo. Shiny.');
+  }
 }
