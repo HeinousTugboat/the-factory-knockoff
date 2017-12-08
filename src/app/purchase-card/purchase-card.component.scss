@@ -1,0 +1,76 @@
+$red: hsl(0, 60%, 60%);
+$green: hsl(120, 60%, 60%);
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  margin: 4px;
+  background: #777;
+  color: white;
+  font-size: 80%;
+  text-rendering: optimizeLegibility;
+}
+
+header, footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 auto;
+  background: #555;
+}
+
+.decrease {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  color: white;
+  background: $red;
+ }
+.to-purchase {
+  flex: 1 0 auto;
+  margin: 0 4px;
+  text-align: center;
+}
+.increase{
+  width: 20px;
+  height: 20px;
+  border: 0;
+  color: white;
+  background: $green;
+}
+.quantity-wrapper {
+  height: 2em;
+  width: 2em;
+  border: 2px solid white;
+  border-radius: 50%;
+  text-align: center;
+  margin: 4px;
+}
+.quantity{
+  vertical-align: -0.5em;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 2px;
+  .name {
+    margin: 2px;
+  }
+  .prices {
+    margin: 2px;
+    font-size: 80%;
+    .buy-price {
+      color: $red;
+    }
+    .sale-price {
+      color: $green;
+    }
+  }
+}
