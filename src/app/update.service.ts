@@ -1,9 +1,11 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { interval as intervalRx } from 'rxjs/observable/interval';
 import { takeWhile, timeInterval } from 'rxjs/operators';
-import { animationFrame } from 'rxjs/scheduler/animationFrame';
 import { TimeInterval } from 'rxjs/operators/timeInterval';
+import { animationFrame } from 'rxjs/scheduler/animationFrame';
+
+import { DataService } from './data.service';
 
 @Injectable()
 export class UpdateService {
@@ -19,15 +21,16 @@ export class UpdateService {
   public lastSaved = 0;
   @Output() public log = new EventEmitter;
 
-  constructor() {
+  constructor(private dataService: DataService) {
     const savePeriod = 5000;
 
     this.loop$.subscribe(({value, interval}) => {
       this.tick = value;
       this.time = performance.now();
 
-      if (this.tick % 100 === 0) {
+      if (this.tick % 1000 === 0) {
         this.log.emit('tick! (' + interval + 'ms) ' + this.tick);
+        this.dataService.update();
       }
       if (this.time - this.lastSaved > savePeriod) {
         this.lastSaved = this.time;

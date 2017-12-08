@@ -1,7 +1,9 @@
-import { UpdateService } from './update.service';
 import { Component, OnInit } from '@angular/core';
+
+import { DataService } from './data.service';
 import { ItemModel } from './item.model';
 import { RecipeModel } from './recipe.model';
+import { UpdateService } from './update.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,7 @@ export class AppComponent implements OnInit {
   items: ItemModel[] = [];
   recipes: RecipeModel[] = [];
 
-  constructor(public updateService: UpdateService) {
+  constructor(public updateService: UpdateService, public dataService: DataService) {
     updateService.log.subscribe(entry => {
       // if (this.logs.length > 10) {
         // this.logs.shift();
