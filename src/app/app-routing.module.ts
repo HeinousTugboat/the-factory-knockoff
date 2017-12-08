@@ -1,11 +1,12 @@
-import { GameMenuComponent } from './panels/game-menu/game-menu.component';
-import { ManufacturingComponent } from './panels/manufacturing/manufacturing.component';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PurchasingComponent } from './panels/purchasing/purchasing.component';
-import { InventoryComponent } from './panels/inventory/inventory.component';
-import { SalesComponent } from './panels/sales/sales.component';
+import { RouterModule, Routes } from '@angular/router';
+
 import { AutomationComponent } from './panels/automation/automation.component';
+import { GameMenuComponent } from './panels/game-menu/game-menu.component';
+import { InventoryComponent } from './panels/inventory/inventory.component';
+import { ManufacturingComponent } from './panels/manufacturing/manufacturing.component';
+import { PurchasingComponent } from './panels/purchasing/purchasing.component';
+import { SalesComponent } from './panels/sales/sales.component';
 
 const routes: Routes = [
   {path: '', component: PurchasingComponent},

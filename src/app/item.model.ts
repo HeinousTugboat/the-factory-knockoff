@@ -1,11 +1,11 @@
 export enum Tiers {
-  RESOURCE = "Resource", 
-  TIER_1 = "Tier 1", 
-  TIER_2 = "Tier 2", 
-  TIER_3 = "Tier 3", 
-  TIER_4 = "Tier 4", 
-  BUILDER = "Builder", 
-  TASKER = "Tasker"
+  RESOURCE = 'Resource',
+  TIER_1 = 'Tier 1',
+  TIER_2 = 'Tier 2',
+  TIER_3 = 'Tier 3',
+  TIER_4 = 'Tier 4',
+  BUILDER = 'Builder',
+  TASKER = 'Tasker'
 }
 
 type Item = [string, Tiers, number];
@@ -71,10 +71,10 @@ const items = [
 
 export class ItemModel {
   static list: Map<string, ItemModel> = new Map;
-  available: boolean = false;
-  retail: boolean = false;
-  current: number = 0;
-  total: number = 0;
+  available = false;
+  retail = false;
+  current = 0;
+  total = 0;
   buyCost: number;
 
   constructor(
