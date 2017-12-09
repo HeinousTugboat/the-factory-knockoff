@@ -1,10 +1,15 @@
-<nav id="nav">
+<header>
   <h1>The Factory</h1>
-  <a routerLink="/purchasing" routerLinkActive="active">Purchasing</a>
-  <a routerLink="/manufacturing" routerLinkActive="active">Manufacturing</a>
-  <a routerLink="/inventory" routerLinkActive="active">Inventory</a>
-  <a routerLink="/sales" routerLinkActive="active">Sales</a>
-  <a routerLink="/automation" routerLinkActive="active">Automation</a>
+  <div class="cash">{{ dataService.currentMoney | currency }}</div>
+  <button class="help">?</button>
+  <button class="menu" routerLink="/game">...</button>
+</header>
+<nav id="nav">
+  <a routerLink="/purchasing" routerLinkActive="active" [class.prev]="currentRoute === 'manufacturing'">Purchasing</a>
+  <a routerLink="/manufacturing" routerLinkActive="active" [class.prev]="currentRoute === 'inventory'">Manufacturing</a>
+  <a routerLink="/inventory" routerLinkActive="active" [class.prev]="currentRoute === 'sales'">Inventory</a>
+  <a routerLink="/sales" routerLinkActive="active" [class.prev]="currentRoute === 'automation'">Sales</a>
+  <a routerLink="/automation" routerLinkActive="active" [class.prev]="currentRoute === 'game'">Automation</a>
   <a routerLink="/game" routerLinkActive="active">Game</a>
 </nav>
 <div id="outlet">
