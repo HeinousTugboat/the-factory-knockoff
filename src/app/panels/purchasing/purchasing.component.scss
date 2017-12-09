@@ -1,4 +1,40 @@
 :host {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.resource-bar, .footer {
+  font-size: 80%;
+  padding: 4px;
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
+  justify-content: space-between;
+  // max-width: 400px;
+}
+.resource-bar {
+  background: #433F3F;
+  border-bottom: 2px solid white;
+}
+.footer {
+  border: 2px solid #7F7F7F;
+  border-left: 0;
+  border-right: 0;
+  background: repeating-linear-gradient(45deg, #3D3838 4%, #3D3838 5%, #453F3F 5%, #453F3F 6%);
+  .is-negative {
+    color: red;
+  }
+  .is-positive {
+    color: green;
+  }
+}
+.cards {
+  flex: 1 1 auto;
+  display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  // max-width: 80%;
 }

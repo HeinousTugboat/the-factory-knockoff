@@ -1,8 +1,19 @@
 <!-- <p>{{items | json}}</p> -->
-<ng-container *ngFor="let item of items">
-  <app-purchase-card 
-    [item]="item" 
-    [toPurchase]="0" 
-    (increase)="increase(item)" 
-    (decrease)="decrease(item)"></app-purchase-card>
-</ng-container>
+<div class="resource-bar">
+  <div>{{items.length}} ITEMS</div>
+  <div>SUPPLY</div>
+</div>
+<div class="cards">
+  <app-purchase-card
+    *ngFor="let item of items"
+    [item]="item"
+    [toPurchase]="toPurchase.get(item) || 0"
+    (increase)="increase(item)"
+    (decrease)="decrease(item)">
+  </app-purchase-card>
+</div>
+<div class="footer">
+  <div class="buy">BUY: <span [class.is-negative]="totals.buy < 0">{{totals.buy | currency}}</span></div>
+  <div class="sell">SELL: <span [class.is-positive]="totals.sell > 0">{{totals.sell | currency}}</span></div>
+  <div class="net">NET: <span [class.is-positive]="totals.net > 0" [class.is-negative]="totals.net < 0">{{totals.buy + totals.sell | currency}}</span></div>
+</div>
