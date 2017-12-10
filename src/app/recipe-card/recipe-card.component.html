@@ -1,3 +1,32 @@
-<button (click)="recipe.make()">Make!</button>
-{{recipe.label}} <ng-container *ngFor="let item of recipe.inputs">{{item.name}} [{{item.current}}] </ng-container>
-<br />
+<!-- {{item|json}} -->
+<header>
+  <div class="progress"(click)="craft()">
+    <div class="label" *ngIf="recipe.inputs.length !== recipe.progress.length">BUILD</div>
+    <div class="label" *ngIf="recipe.inputs.length === recipe.progress.length">COMPLETE</div>
+    <div class="recipe-step" *ngFor="let input of recipe.inputs; let i = index;" [class.is-complete]="recipe.inputs[i] === recipe.progress[i]" [class.is-unavailable]="input.current === 0"></div>
+  </div>
+  <button class="toggle">-</button>
+</header>
+<div class="body" (click)="craft()">
+  <img src="//placehold.it/150/433F3F/FFFFFF">
+  <ol class="inputs-list">
+    <li *ngFor="let input of inputs">
+      <div class="input-name">{{input[0].name}}</div>
+      <div class="input-qty">{{input[1]}}/{{input[2]}} {{input[0].current}}</div>
+    </li>
+  </ol>
+</div>
+<footer>
+  <div class="quantity-wrapper">
+    <span class="quantity">{{ recipe.output.current }}</span>
+  </div>
+  <div class="card-info">
+    <span class="name">{{ recipe.output.name }}</span>
+    <div class="prices">
+      <span class="sale-price">{{ recipe.output.salePrice | currency}}</span>
+    </div>
+  </div>
+</footer>
+
+<!-- {{ item.name }}, {{ item.buyCost }}, {{ item.current }}
+  <br /> -->

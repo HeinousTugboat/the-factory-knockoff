@@ -1,0 +1,114 @@
+$red: #CC0202;
+$dark-red: #723030;
+$green: #03B300;
+$dark-green: #33692F;
+$blue: #1177D1;
+$dark-blue: #23405B;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  background: #433F3F;
+  font-size: 80%;
+  text-rendering: optimizeLegibility;
+}
+
+header, footer {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  flex: 0 0 auto;
+  background: #322F2F;
+}
+button {
+  width: 25px;
+  height: 20px;
+  border: 0;
+  color: white;
+  background: $green;
+}
+.progress {
+  flex: 1 1 auto;
+  margin: 2px;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+
+  >.label {
+    position: absolute;
+    top: 2px; left: 0; right: 0; bottom: 0;
+    text-align: center;
+    font-size: 80%;
+  }
+}
+.recipe-step {
+  background: $dark-blue;
+  border: 1px solid #322F2F;
+  flex: 1 1 auto;
+  &.is-unavailable {
+    background: $dark-red;
+  }
+  &.is-complete {
+    background: $blue;
+  }
+}
+header.is-negative {
+  color: inherit;
+  background: $dark-red;
+}
+header.is-positive {
+  color: inherit;
+  background: $dark-green;
+}
+.body {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+}
+.inputs-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2px;
+  font-size: 80%;
+  li {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.quantity-wrapper {
+  height: 2em;
+  width: 2em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  text-align: center;
+  margin: 4px;
+}
+.quantity{
+  vertical-align: -0.5em;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 2px;
+  .name {
+    margin: 2px;
+  }
+  .prices {
+    margin: 2px;
+    font-size: 80%;
+    .buy-price {
+      color: $red;
+    }
+    .sale-price {
+      color: $green;
+    }
+  }
+}

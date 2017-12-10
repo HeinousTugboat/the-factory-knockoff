@@ -215,6 +215,7 @@ export class RecipeModel {
   public progress: ItemModel[] = [];
   public output: ItemModel;
   public inputs: ItemModel[] = [];
+  public inputMap: Map<ItemModel, number> = new Map;
 
   constructor(
     public label: string,
@@ -223,7 +224,13 @@ export class RecipeModel {
     inputLabels: string[]
   ) {
     for (const inputLabel of inputLabels) {
-      this.inputs.push(ItemModel.list.get(inputLabel));
+      let qty = 0;
+      const input = ItemModel.list.get(inputLabel);
+      this.inputs.push(input);
+      if (this.inputMap.has(input)) {
+        qty = this.inputMap.get(input);
+      }
+      this.inputMap.set(input, qty + 1);
     }
     this.output = ItemModel.list.get(outputLabel);
     RecipeModel.list.set(label, this);
