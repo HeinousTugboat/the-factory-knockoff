@@ -9,13 +9,13 @@ import { PurchasingComponent } from './panels/purchasing/purchasing.component';
 import { SalesComponent } from './panels/sales/sales.component';
 
 const routes: Routes = [
-  {path: '', component: PurchasingComponent},
   {path: 'purchasing', component: PurchasingComponent},
   {path: 'manufacturing', component: ManufacturingComponent},
   {path: 'inventory', component: InventoryComponent},
   {path: 'sales', component: SalesComponent},
   {path: 'automation', component: AutomationComponent},
-  {path: 'game', component: GameMenuComponent}
+  {path: 'game', component: GameMenuComponent},
+  {path: '', redirectTo: 'purchasing', pathMatch: 'full'}
 ];
 
 @NgModule({
