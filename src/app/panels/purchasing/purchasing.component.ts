@@ -42,10 +42,19 @@ export class PurchasingComponent implements OnInit, OnDestroy {
     }, { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 });
   }
 
-  purchase(item: ItemModel) {
-    item.current++;
-    console.log(`buying one! ${item.name} [${item.current}]`);
-    this.dataService.update();
+  purchase() {
+    this.updateTotals();
+    if (this.totals.buy > this.dataService.currentMoney) {
+      console.log(`Bzzzzt. Try again. U broke bro.`);
+      return;
+    }
+    this.dataService.currentMoney += this.totals.net;
+    this.dataService.totalEarned += this.totals.sell;
+    for (const [item, qty] of this.toPurchase.entries()) {
+      item.current += qty;
+    }
+    this.toPurchase = new Map;
+    this.updateTotals();
   }
 
   ngOnInit() {

@@ -11,8 +11,12 @@
     (toPurchaseChange)="toPurchaseChange(item, $event)">
   </app-purchase-card>
 </div>
-<div class="footer">
+<div class="totals">
   <div class="buy">BUY: <span [class.is-negative]="totals.buy < 0">{{totals.buy | currency}}</span></div>
   <div class="sell">SELL: <span [class.is-positive]="totals.sell > 0">{{totals.sell | currency}}</span></div>
   <div class="net">NET: <span [class.is-positive]="totals.net > 0" [class.is-negative]="totals.net < 0">{{totals.buy + totals.sell | currency}}</span></div>
+</div>
+<div class="buy-sell-bar">
+  <div class="buy-sell" *ngIf="totals.qty !== null" (click)="purchase()">BUY/SELL ITEMS [+{{totals.buyQty}}/{{totals.sellQty}}]</div>
+  <div class="no-selected" *ngIf="totals.qty === null">NO ITEMS SELECTED</div>
 </div>
