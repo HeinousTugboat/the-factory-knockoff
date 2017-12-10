@@ -8,3 +8,13 @@ body {
   background: #5D5656;
   color: #FFF;
 }
+
+$red: #CC0202;
+$green: #03B300;
+
+.is-negative {
+  color: $red;
+}
+.is-positive {
+  color: $green;
+}
