@@ -1,18 +1,22 @@
 <!-- {{item|json}} -->
-<header>
 	<button class="decrease" (click)="decrease.emit(item)">-</button>
-	<span class="to-purchase">{{ toPurchase }} - {{ toPurchase*item.buyPrice | currency }}</span>
 	<button class="increase" (click)="increase.emit(item)">+</button>
+<header [class.is-positive]="toPurchase < 0" [class.is-negative]="toPurchase > 0">
+  <div class="to-purchase" *ngIf="toPurchase > 0">+{{ toPurchase }} &middot; <span class="is-negative">{{ -toPurchase*item.buyPrice | currency }}</span></div>
+  <div class="to-purchase" *ngIf="toPurchase < 0">{{ toPurchase }} &middot; <span class="is-positive">{{ -toPurchase*item.salePrice | currency }}</span></div>
+  <div class="to-purchase" *ngIf="!toPurchase">+0 &middot; {{ 0 | currency }}</div>
 </header>
 <img src="//placehold.it/150/433F3F/FFFFFF">
 <footer>
-	<div class="quantity-wrapper"><span class="quantity">{{ item.current }}</span></div>
-	<div class="card-info">
-		<span class="name">{{ item.name }}</span>
-		<div class="prices">
-			<span class="buy-price">{{ item.buyPrice | currency }}</span> - <span class="sale-price">{{ item.salePrice | currency}}</span>
-		</div>
-	</div>
+  <div class="quantity-wrapper">
+    <span class="quantity">{{ item.current }}</span>
+  </div>
+  <div class="card-info">
+    <span class="name">{{ item.name }}</span>
+    <div class="prices">
+      <span class="buy-price">{{ item.buyPrice | currency }}</span> &middot; <span class="sale-price">{{ item.salePrice | currency}}</span>
+    </div>
+  </div>
 </footer>
 
 <!-- {{ item.name }}, {{ item.buyCost }}, {{ item.current }}
