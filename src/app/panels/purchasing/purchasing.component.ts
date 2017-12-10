@@ -13,38 +13,33 @@ export class PurchasingComponent implements OnInit, OnDestroy {
   items: ItemModel[];
   private items$: Subscription;
   toPurchase: Map<ItemModel, number> = new Map;
-  totals: { buy: number, sell: number, net: number } = { buy: 0, sell: 0, net: 0 };
+  totals: { buy: number, sell: number, net: number, qty: number | null, buyQty: number, sellQty: number }
+    = { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 };
   constructor(private dataService: DataService) { }
 
-  increase(item: ItemModel) {
-    if (this.toPurchase.has(item)) {
-      const qty = this.toPurchase.get(item);
-      this.toPurchase.set(item, qty + 1);
-    } else {
-      this.toPurchase.set(item, 1);
-    }
-    this.updateTotals();
-  }
-
-  decrease(item: ItemModel) {
-    if (this.toPurchase.has(item)) {
-      const qty = this.toPurchase.get(item);
-      this.toPurchase.set(item, qty > item.current ? qty - 1 : qty);
-    }
+  toPurchaseChange(item: ItemModel, amount: number) {
+    const qty = this.toPurchase.get(item) || 0;
+    console.log('toPurchaseChange', item.current, qty, amount);
+    this.toPurchase.set(item, qty + amount + item.current >= 0 ? qty + amount : qty);
     this.updateTotals();
   }
 
   updateTotals() {
     this.totals = Array.from(this.toPurchase.entries()).reduce((acc, item) => {
+      if (item[1] === 0) { return acc; }
+      if (!acc.qty) { acc.qty = 0; }
       if (item[1] > 0) {
         acc.buy -= item[1] * item[0].buyPrice;
+        acc.buyQty += item[1];
       }
       if (item[1] < 0) {
-        acc.sell += item[1] * item[0].salePrice;
+        acc.sell -= item[1] * item[0].salePrice;
+        acc.sellQty += item[1];
       }
+      acc.qty += item[1];
       acc.net = acc.sell + acc.buy;
       return acc;
-    }, { buy: 0, sell: 0, net: 0 });
+    }, { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 });
   }
 
   purchase(item: ItemModel) {

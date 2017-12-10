@@ -10,8 +10,7 @@ import { ItemModel } from '../item.model';
 export class PurchaseCardComponent implements OnInit {
   @Input() toPurchase: number;
   @Input() item: ItemModel;
-  @Output() decrease = new EventEmitter;
-  @Output() increase = new EventEmitter;
+  @Output() toPurchaseChange = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {

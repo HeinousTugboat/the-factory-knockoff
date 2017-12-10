@@ -8,8 +8,7 @@
     *ngFor="let item of items"
     [item]="item"
     [toPurchase]="toPurchase.get(item) || 0"
-    (increase)="increase(item)"
-    (decrease)="decrease(item)">
+    (toPurchaseChange)="toPurchaseChange(item, $event)">
   </app-purchase-card>
 </div>
 <div class="footer">
