@@ -19,7 +19,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
 
   toPurchaseChange(item: ItemModel, amount: number) {
     const qty = this.toPurchase.get(item) || 0;
-    console.log('toPurchaseChange', item.current, qty, amount);
+    // console.log('toPurchaseChange', item.current, qty, amount);
     this.toPurchase.set(item, qty + amount + item.current >= 0 ? qty + amount : qty);
     this.updateTotals();
   }
