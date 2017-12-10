@@ -13,7 +13,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
   items: ItemModel[];
   private items$: Subscription;
   toPurchase: Map<ItemModel, number> = new Map;
-  totals: {buy: number, sell: number, net: number} = {buy: 0, sell: 0, net: 0};
+  totals: { buy: number, sell: number, net: number } = { buy: 0, sell: 0, net: 0 };
   constructor(private dataService: DataService) { }
 
   increase(item: ItemModel) {
@@ -44,7 +44,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
       }
       acc.net = acc.sell + acc.buy;
       return acc;
-    }, {buy: 0, sell: 0, net: 0});
+    }, { buy: 0, sell: 0, net: 0 });
   }
 
   purchase(item: ItemModel) {
