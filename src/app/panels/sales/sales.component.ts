@@ -12,6 +12,6 @@ export class SalesComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.items = ItemModel.init().filter(x => x.buyCost > 0);
+    this.items = ItemModel.init().filter(x => x.buyPrice > 0);
   }
 }

@@ -1,4 +1,60 @@
-<!-- <p>{{items | json}}</p> -->
-<ng-container *ngFor="let recipe of recipes">
-  <app-recipe-card [recipe]="recipe"></app-recipe-card>
+<ng-container *ngIf="tierLists.has(tiers.TIER_1)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.TIER_1).length}} ITEMS</div>
+    <div>PRODUCT: TIER 1</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.TIER_1)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="tierLists.has(tiers.TIER_2)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.TIER_2).length}} ITEMS</div>
+    <div>PRODUCT: TIER 2</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.TIER_2)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="tierLists.has(tiers.TIER_3)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.TIER_3).length}} ITEMS</div>
+    <div>PRODUCT: TIER 3</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.TIER_3)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="tierLists.has(tiers.TIER_4)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.TIER_4).length}} ITEMS</div>
+    <div>PRODUCT: TIER 4</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.TIER_4)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="tierLists.has(tiers.BUILDER)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.BUILDER).length}} ITEMS</div>
+    <div>BUILDER</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.BUILDER)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
+</ng-container>
+<ng-container *ngIf="tierLists.has(tiers.TASKER)">
+  <div class="resource-bar">
+    <div>{{tierLists.get(tiers.TASKER).length}} ITEMS</div>
+    <div>TASKER</div>
+  </div>
+  <div class="cards">
+    <app-recipe-card *ngFor="let recipe of tierLists.get(tiers.TASKER)" [recipe]="recipe">
+    </app-recipe-card>
+  </div>
 </ng-container>

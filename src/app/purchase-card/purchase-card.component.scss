@@ -1,15 +1,15 @@
-$red: hsl(0, 60%, 60%);
-$green: hsl(120, 60%, 60%);
+$red: #CC0202;
+$dark-red: #723030;
+$green: #03B300;
+$dark-green: #33692F;
 
 :host {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
   margin: 4px;
-  background: #777;
-  color: white;
+  background: #433F3F;
   font-size: 80%;
   text-rendering: optimizeLegibility;
 }
@@ -20,32 +20,37 @@ header, footer {
   justify-content: space-between;
   width: 100%;
   flex: 0 0 auto;
-  background: #555;
+  background: #322F2F;
 }
-
-.decrease {
-  width: 20px;
+button {
+  width: 25px;
   height: 20px;
   border: 0;
   color: white;
+}
+header.is-negative {
+  color: inherit;
+  background: $dark-red;
+}
+header.is-positive {
+  color: inherit;
+  background: $dark-green;
+}
+.decrease {
   background: $red;
  }
 .to-purchase {
   flex: 1 0 auto;
-  margin: 0 4px;
+  // margin: 0 4px;
   text-align: center;
 }
 .increase{
-  width: 20px;
-  height: 20px;
-  border: 0;
-  color: white;
   background: $green;
 }
 .quantity-wrapper {
   height: 2em;
   width: 2em;
-  border: 2px solid white;
+  border: 2px solid currentColor;
   border-radius: 50%;
   text-align: center;
   margin: 4px;

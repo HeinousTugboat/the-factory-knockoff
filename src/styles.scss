@@ -5,4 +5,16 @@ body {
   width: 100vw;
   // font-family: 'Open Sans Condensed', sans-serif;
   font-family: 'Open Sans', sans-serif;
+  background: #5D5656;
+  color: #FFF;
+}
+
+$red: #CC0202;
+$green: #03B300;
+
+.is-negative {
+  color: $red;
+}
+.is-positive {
+  color: $green;
 }
