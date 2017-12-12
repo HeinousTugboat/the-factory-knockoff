@@ -1,4 +1,7 @@
 <!-- <p>{{items | json}}</p> -->
+<ng-container *ngIf="!items.length">
+  <h1>No items currently! Go buy or make something!</h1>
+</ng-container>
 <ng-container *ngFor="let item of items">
   <app-item-card [item]="item"></app-item-card>
 </ng-container>
