@@ -83,4 +83,15 @@ nav {
   bottom: 8px;
   right: 8px;
   min-width: 15vw;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 4px;
+  font-size: 11px;
+  line-height: 1.45;
+  ul {
+    border-top: 1px solid white;
+    margin-top: 2px;
+    padding-top: 2px;
+  }
 }

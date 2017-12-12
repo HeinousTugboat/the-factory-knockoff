@@ -13,14 +13,13 @@
   <a routerLink="/game" routerLinkActive="active">Game</a>
 </nav>
 <div id="outlet">
-	<router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
 <div id="log">
-	<p>{{updateService.tick}} tick</p>
-	<p>#{{logs.length}} {{updateService.log | async}}</p>
-	<ul>
-		<li *ngFor="let entry of logs.slice(-10); index as i">{{entry}}</li>
-		<li>Todo: Refactor data pieces out into a data service, single source of truth and all that jazz.</li>
-	</ul>
+  <p>{{updateService.tick}} ticks - {{logs.length}} log items</p>
+  <p>Latest entry: {{updateService.log | async}}</p>
+  <ul>
+    <li *ngFor="let entry of logs.slice(-10); index as i">{{entry}}</li>
+  </ul>
 </div>
