@@ -50,7 +50,7 @@ export class PurchasingComponent implements OnInit, OnDestroy {
     }
     this.dataService.currentMoney += this.totals.net;
     this.dataService.totalEarned += this.totals.sell;
-    for (const [item, qty] of this.toPurchase.entries()) {
+    for (const [item, qty] of Array.from(this.toPurchase)) {
       item.current += qty;
     }
     this.toPurchase = new Map;
