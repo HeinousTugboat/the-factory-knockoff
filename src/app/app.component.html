@@ -17,8 +17,8 @@
 </div>
 
 <div id="log">
-  <p>{{updateService.tick}} tick</p>
-  <p>#{{logs.length}} {{updateService.log | async}}</p>
+  <p>{{updateService.tick}} ticks - {{logs.length}} log items</p>
+  <p>Latest entry: {{updateService.log | async}}</p>
   <ul>
     <li *ngFor="let entry of logs.slice(-10); index as i">{{entry}}</li>
   </ul>

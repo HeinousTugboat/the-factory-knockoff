@@ -183,30 +183,39 @@ const recipes: [string, Tiers, string, string[]][] = [
     ]],
   ['Builder: Tier 1', Tiers.BUILDER,
     'Builder: Tier 1', [
+      'Motor', 'Arm', 'Arm', 'Conveyor', 'Thing-a-ma-jig'
     ]],
   ['Builder: Tier 2', Tiers.BUILDER,
     'Builder: Tier 2', [
+      'Motor', 'Arm', 'Arm', 'Arm', 'Conveyor', 'Thing-a-ma-jig', 'Widget', 'Widget'
     ]],
   ['Builder: Tier 3', Tiers.BUILDER,
     'Builder: Tier 3', [
+      'Logic unit', 'Thing-a-ma-jig', 'Widget', 'Widget', 'Widget', 'Widget', 'Assembly line'
     ]],
   ['Builder: Tier 4', Tiers.BUILDER,
     'Builder: Tier 4', [
+      'Widget', 'Widget', 'Adv logic unit', 'Adv logic unit', 'Assembly line', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor', 'Sensor'
     ]],
   ['Builder: Builders', Tiers.BUILDER,
     'Builder: Builders', [
+      'Arm', 'Arm', 'Logic unit', 'Thing-a-ma-jig', 'Thing-a-ma-jig', 'Thing-a-ma-jig', 'Thing-a-ma-jig', 'Widget', 'Assembly line'
     ]],
   ['Builder: Taskers', Tiers.BUILDER,
     'Builder: Taskers', [
+      'Thing-a-ma-jig', 'Thing-a-ma-jig', 'Widget', 'Widget', 'Adv logic unit', 'Assembly line'
     ]],
   ['Builder: Universal', Tiers.BUILDER,
     'Builder: Universal', [
+      'Arm', 'Arm', 'Arm', 'Arm', 'Thing-a-ma-jig', 'Thing-a-ma-jig', 'Widget', 'Widget', 'Widget', 'Widget', 'Adv logic unit', 'Adv logic unit', 'Assembly line', 'Assembly line'
     ]],
   ['Tasker: Purchasing', Tiers.TASKER,
     'Tasker: Purchasing', [
+      'Paint', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Circuit', 'Circuit', 'Circuit', 'Circuit', 'Logic unit', 'Widget'
     ]],
   ['Tasker: Sales', Tiers.TASKER,
     'Tasker: Sales', [
+      'Paint', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Wire', 'Logic unit', 'Logic unit', 'Widget', 'Adv logic unit'
     ]]
 ];
 

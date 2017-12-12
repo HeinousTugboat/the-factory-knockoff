@@ -27,18 +27,19 @@ export class UpdateService {
     this.loop$.subscribe(({value, interval}) => {
       this.tick = value;
       this.time = performance.now();
+      const stamp = new Date(Date.now()).toLocaleTimeString();
 
       if (this.tick % 1000 === 0) {
-        this.log.emit('tick! (' + interval + 'ms) ' + this.tick);
+        this.log.emit('['+stamp+'] tick! (' + interval + 'ms) ' + this.tick);
         this.dataService.update();
       }
       if (this.time - this.lastSaved > savePeriod) {
         this.lastSaved = this.time;
-        this.log.emit('Pretending to save...');
+        this.log.emit('['+stamp+'] Pretending to save... ');
       }
       if (this.killSwitch && this.tick >= 500) {
         this.running = false;
-        this.log.emit('Killswitch Engaged.');
+        this.log.emit('['+stamp+'] Killswitch Engaged.');
       }
     });
   }
