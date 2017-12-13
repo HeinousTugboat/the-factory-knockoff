@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { RecipeModel } from '../recipe.model';
-import { ItemModel } from '../item.model';
+import { RecipeModel } from '../../models/recipe.model';
+import { ItemModel } from '../../models/item.model';
 
 @Component({
   selector: 'app-recipe-card',

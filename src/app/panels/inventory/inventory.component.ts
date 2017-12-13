@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DataService } from '../../data.service';
-import { ItemModel } from '../../item.model';
+import { DataService } from '../../services/data.service';
+import { ItemModel } from '../../models/item.model';
 
 @Component({
   selector: 'app-inventory',

@@ -24,22 +24,22 @@ export class UpdateService {
   constructor(private dataService: DataService) {
     const savePeriod = 5000;
 
-    this.loop$.subscribe(({value, interval}) => {
+    this.loop$.subscribe(({ value, interval }) => {
       this.tick = value;
       this.time = performance.now();
       const stamp = new Date(Date.now()).toLocaleTimeString();
 
       if (this.tick % 1000 === 0) {
-        this.log.emit('['+stamp+'] tick! (' + interval + 'ms) ' + this.tick);
+        this.log.emit('[' + stamp + '] tick! (' + interval + 'ms) ' + this.tick);
         this.dataService.update();
       }
       if (this.time - this.lastSaved > savePeriod) {
         this.lastSaved = this.time;
-        this.log.emit('['+stamp+'] Pretending to save... ');
+        this.log.emit('[' + stamp + '] Pretending to save... ');
       }
       if (this.killSwitch && this.tick >= 500) {
         this.running = false;
-        this.log.emit('['+stamp+'] Killswitch Engaged.');
+        this.log.emit('[' + stamp + '] Killswitch Engaged.');
       }
     });
   }
