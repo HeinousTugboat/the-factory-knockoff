@@ -1,2 +1,23 @@
 <!-- {{item|json}} -->
-{{ item.name }}, {{ item.buyPrice }}, {{ item.current }}<br />
+<header [class.is-positive]="toSell < 0" [class.is-negative]="toSell > 0">
+  <button class="decrease" (click)="toSellChange.emit(-1)">-</button>
+  <div class="to-sell" *ngIf="toSell > 0">+{{ toSell }} &middot; <span class="is-negative">{{ -toSell*item.buyPrice | currency }}</span></div>
+  <div class="to-sell" *ngIf="toSell < 0">{{ toSell }} &middot; <span class="is-positive">{{ -toSell*item.salePrice | currency }}</span></div>
+  <div class="to-sell" *ngIf="!toSell">+0 &middot; {{ 0 | currency }}</div>
+  <button class="increase" (click)="toSellChange.emit(1)">+</button>
+</header>
+<img src="//placehold.it/150/433F3F/FFFFFF">
+<footer>
+  <div class="quantity-wrapper">
+    <span class="quantity">{{ item.current }}</span>
+  </div>
+  <div class="card-info">
+    <span class="name">{{ item.name }}</span>
+    <div class="prices">
+      <span class="buy-price">{{ item.buyPrice | currency }}</span> &middot; <span class="sale-price">{{ item.salePrice | currency}}</span>
+    </div>
+  </div>
+</footer>
+
+<!-- {{ item.name }}, {{ item.buyCost }}, {{ item.current }}
+<br /> -->
