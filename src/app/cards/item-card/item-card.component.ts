@@ -8,9 +8,10 @@ import { ItemModel } from '../../models/item.model';
   styleUrls: ['./item-card.component.scss']
 })
 export class ItemCardComponent implements OnInit {
+  @Input() toSell: number;
   @Input() item: ItemModel;
-  @Output() removeForSale = new EventEmitter;
-  @Output() addForSale = new EventEmitter;
+  @Output() toSellChange = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {

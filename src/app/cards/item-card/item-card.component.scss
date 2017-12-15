@@ -1,0 +1,81 @@
+$red: #CC0202;
+$dark-red: #723030;
+$green: #03B300;
+$dark-green: #33692F;
+
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 4px;
+  background: #433F3F;
+  font-size: 80%;
+  text-rendering: optimizeLegibility;
+}
+
+header, footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 auto;
+  background: #322F2F;
+}
+button {
+  width: 25px;
+  height: 20px;
+  border: 0;
+  color: white;
+}
+header.is-negative {
+  color: inherit;
+  background: $dark-red;
+}
+header.is-positive {
+  color: inherit;
+  background: $dark-green;
+}
+.decrease {
+  background: $red;
+ }
+.to-sell {
+  flex: 1 0 auto;
+  // margin: 0 4px;
+  text-align: center;
+}
+.increase{
+  background: $green;
+}
+.quantity-wrapper {
+  height: 2em;
+  width: 2em;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  text-align: center;
+  margin: 4px;
+}
+.quantity{
+  vertical-align: -0.5em;
+}
+.card-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 2px;
+  .name {
+    margin: 2px;
+  }
+  .prices {
+    margin: 2px;
+    font-size: 80%;
+    .buy-price {
+      color: $red;
+    }
+    .sale-price {
+      color: $green;
+    }
+  }
+}
