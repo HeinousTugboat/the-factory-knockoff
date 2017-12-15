@@ -1,9 +1,9 @@
-import { Tiers } from '../../item.model';
+import { Tiers } from '../../models/item.model';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DataService } from '../../data.service';
-import { RecipeModel } from '../../recipe.model';
+import { DataService } from '../../services/data.service';
+import { RecipeModel } from '../../models/recipe.model';
 
 @Component({
   selector: 'app-manufacturing',

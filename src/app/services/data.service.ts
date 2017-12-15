@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
-import { ItemModel } from './item.model';
-import { RecipeModel } from './recipe.model';
+import { ItemModel } from '../models/item.model';
+import { RecipeModel } from '../models/recipe.model';
 
 @Injectable()
 export class DataService {

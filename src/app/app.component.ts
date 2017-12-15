@@ -2,10 +2,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DataService } from './data.service';
-import { ItemModel } from './item.model';
-import { RecipeModel } from './recipe.model';
-import { UpdateService } from './update.service';
+import { DataService } from './services/data.service';
+import { ItemModel } from './models/item.model';
+import { RecipeModel } from './models/recipe.model';
+import { UpdateService } from './services/update.service';
 import { filter, map } from 'rxjs/operators';
 
 @Component({

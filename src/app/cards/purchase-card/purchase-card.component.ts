@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { ItemModel } from '../item.model';
+import { ItemModel } from '../../models/item.model';
 
 @Component({
   selector: 'app-purchase-card',

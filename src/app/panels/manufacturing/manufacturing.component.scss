@@ -31,6 +31,6 @@
   flex: 1 1 auto;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(158px, 1fr));
   justify-items: center;
 }
