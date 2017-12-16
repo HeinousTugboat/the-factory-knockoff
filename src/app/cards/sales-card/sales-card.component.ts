@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
 
 import { ItemModel } from '../../models/item.model';
+import { SalesService } from '../../services/sales.service';
+import { SaleModel } from '../../models/sale.model';
 
 @Component({
   selector: 'app-sales-card',
@@ -8,11 +10,28 @@ import { ItemModel } from '../../models/item.model';
   styleUrls: ['./sales-card.component.scss']
 })
 export class SalesCardComponent implements OnInit {
-  @Input() item: ItemModel;
-  @Output() cancel = new EventEmitter;
-  constructor() { }
+  @Input() sale: SaleModel;
+  @Output() saleChange = new EventEmitter;
+  constructor(private salesService: SalesService) { }
 
   ngOnInit() {
+  }
+
+  complete() {
+    if (this.sale.isOpen) {
+      this.sale.isOpen = false;
+      this.sale.isSold = true;
+      this.sale.isComplete = false;
+    } else if (this.sale.isSold) {
+      this.sale.isOpen = false;
+      this.sale.isSold = false;
+      this.sale.isComplete = true;
+    } else {
+      this.sale.isOpen = false;
+      this.sale.isSold = false;
+      this.sale.isComplete = false;
+    }
+    this.saleChange.emit(this.sale);
   }
 
 }

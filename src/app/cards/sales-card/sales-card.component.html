@@ -1,3 +1,7 @@
-<p>
-  sales-card works!
-</p>
+<div>
+  {{ sale.label }}
+  <ng-container *ngIf="sale.isOpen">O</ng-container>
+  <ng-container *ngIf="sale.isSold">S</ng-container>
+  <ng-container *ngIf="sale.isComplete">C</ng-container>
+  <button (click)="complete()">Complete</button>
+</div>
