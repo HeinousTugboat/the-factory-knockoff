@@ -7,6 +7,7 @@ import { ItemModel } from './models/item.model';
 import { RecipeModel } from './models/recipe.model';
 import { UpdateService } from './services/update.service';
 import { filter, map } from 'rxjs/operators';
+import { SalesService } from './services/sales.service';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,10 @@ export class AppComponent implements OnInit, OnDestroy {
   logUpdates$: Subscription;
   currentRoute: string;
 
-  constructor(private router: Router, public updateService: UpdateService, public dataService: DataService) {
+  constructor(private router: Router,
+    public updateService: UpdateService,
+    public dataService: DataService,
+    public salesService: SalesService) {
 
     this.router$ = router.events
       .pipe(

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ItemModel } from '../../models/item.model';
+import { SalesService } from '../../services/sales.service';
 
 @Component({
   selector: 'app-sales',
@@ -8,10 +9,6 @@ import { ItemModel } from '../../models/item.model';
   styleUrls: ['./sales.component.scss']
 })
 export class SalesComponent implements OnInit {
-  public items: ItemModel[];
-  constructor() { }
-
-  ngOnInit() {
-    this.items = ItemModel.init().filter(x => x.buyPrice > 0);
-  }
+  constructor(public salesService: SalesService) { }
+  ngOnInit() { }
 }

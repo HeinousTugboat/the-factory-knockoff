@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ItemModel } from '../../models/item.model';
+import { SalesService } from '../../services/sales.service';
 
 @Component({
   selector: 'app-item-card',
@@ -12,7 +13,7 @@ export class ItemCardComponent implements OnInit {
   @Input() item: ItemModel;
   @Output() toSellChange = new EventEmitter<number>();
 
-  constructor() { }
+  constructor(private salesService: SalesService) { }
 
   ngOnInit() {
   }
