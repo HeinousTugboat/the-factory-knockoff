@@ -10,7 +10,16 @@
   <li>Tasker - ? 6 maybe..</li>
 
 </ol>
-
-<ng-container *ngFor="let item of items">
-  <app-sales-card [item]="item"></app-sales-card>
+<h2>Open Sales</h2>
+<ng-container *ngFor="let sale of salesService.openSales$ | async">
+  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
 </ng-container>
+<h2>Sold</h2>
+<ng-container *ngFor="let sale of salesService.soldSales$ | async">
+  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+</ng-container>
+<h2>Complete Sales</h2>
+<ng-container *ngFor="let sale of salesService.completeSales$ | async">
+  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+</ng-container>
+<div>{{ salesService.allSales$ | async | json }}</div>
