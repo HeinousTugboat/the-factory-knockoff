@@ -16,17 +16,19 @@ export class InventoryComponent implements OnInit, OnDestroy {
   totals: { buy: number, sell: number, net: number, qty: number | null, buyQty: number, sellQty: number }
     = { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 };
 
-  constructor(private dataService: DataService) { }
+  constructor(public dataService: DataService) { }
 
   toSellChange(item: ItemModel, amount: number) {
     const qty = this.toSell.get(item) || 0;
     // console.log('toPurchaseChange', item.current, qty, amount);
-    this.toSell.set(item, qty + amount + item.current >= 0 ? qty + amount : qty);
+    this.toSell.set(item, qty + amount >= item.current
+      ? item.current : qty + amount <= 0
+        ? 0 : qty + amount);
     this.updateTotals();
   }
-  
+
   updateTotals() {
-    this.totals = Array.from(this.toPurchase.entries()).reduce((acc, item) => {
+    this.totals = Array.from(this.toSell.entries()).reduce((acc, item) => {
       if (item[1] === 0) { return acc; }
       if (!acc.qty) { acc.qty = 0; }
       if (item[1] > 0) {
@@ -43,7 +45,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
     }, { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 });
   }
 
-  purchase() {
+  sell() {
     this.updateTotals();
 
     for (const [item, qty] of Array.from(this.toSell.entries())) {
