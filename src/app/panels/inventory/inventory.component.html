@@ -2,6 +2,32 @@
 <ng-container *ngIf="!items.length">
   <h1>No items currently! Go buy or make something!</h1>
 </ng-container>
-<ng-container *ngFor="let item of items">
-  <app-item-card [item]="item"></app-item-card>
+
+<ng-container *ngIf="items.length">
+  <div class="resource-bar">
+    <div>{{items.length}} ITEMS</div>
+    <div>SUPPLY</div>
+  </div>
+  <div class="cards">
+    <app-item-card *ngFor="let item of items"
+      [item]="item"
+      [toSell]="toSell.get(item) || 0"
+      (toSellChange)="toSellChange(item, $event)">
+    </app-item-card>
+  </div>
+  <div class="totals">
+    <div class="buy">BUY:
+      <span [class.is-negative]="totals.buy < 0">{{totals.buy | currency}}</span>
+    </div>
+    <div class="sell">SELL:
+      <span [class.is-positive]="totals.sell > 0">{{totals.sell | currency}}</span>
+    </div>
+    <div class="net">NET:
+      <span [class.is-positive]="totals.net > 0" [class.is-negative]="totals.net < 0">{{totals.buy + totals.sell | currency}}</span>
+    </div>
+  </div>
+  <div class="buy-sell-bar">
+    <div class="buy-sell" *ngIf="totals.qty !== null" (click)="sell()">BUY/SELL ITEMS [+{{totals.buyQty}}/{{totals.sellQty}}]</div>
+    <div class="no-selected" *ngIf="totals.qty === null">NO ITEMS SELECTED</div>
+  </div>
 </ng-container>
