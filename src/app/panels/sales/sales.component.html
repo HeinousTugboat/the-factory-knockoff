@@ -10,36 +10,34 @@
   <li>Tasker - ? 6 maybe..</li>
 </ol> -->
 
-<div class="resource-bar">
-  <div *ngIf="(salesService.openSales$ | async)?.length as len; else noOpen">{{ len }}</div>
-  <ng-template #noOpen>
-    <div>0</div>
-  </ng-template>
-  <div>OPEN ORDERS</div>
-</div>
-<div class="cards">
-  <app-sales-card *ngFor="let sale of salesService.openSales$ | async" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</div>
+<ng-container *ngIf="(salesService.openSales$ | async); let sales">
+  <div class="resource-bar">
+    <div>{{sales.length}}</div>
+    <div>OPEN ORDERS</div>
+  </div>
+  <div class="cards">
+    <app-sales-card *ngFor="let sale of sales" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+  </div>
+</ng-container>
 
-<div class="resource-bar">
-  <div *ngIf="(salesService.soldSales$ | async)?.length as len; else noSold">{{ len }}</div>
-  <ng-template #noSold>
-    <div>0</div>
-  </ng-template>
-  <div>SOLD ORDERS</div>
-</div>
-<div class="cards">
-  <app-sales-card *ngFor="let sale of salesService.soldSales$ | async" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</div>
-<div class="resource-bar">
-  <div *ngIf="(salesService.completeSales$ | async)?.length as len; else noComplete">{{ len }}</div>
-  <ng-template #noComplete>
-    <div>0</div>
-  </ng-template>
-  <div>COMPLETED ORDERS</div>
-</div>
-<div class="cards">
-  <app-sales-card *ngFor="let sale of salesService.completeSales$ | async; index as i" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</div>
+<ng-container *ngIf="(salesService.soldSales$ | async); let sales">
+  <div class="resource-bar">
+    <div>{{sales.length}}</div>
+    <div>SOLD ORDERS</div>
+  </div>
+  <div class="cards">
+    <app-sales-card *ngFor="let sale of sales" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="(salesService.completeSales$ | async); let sales">
+  <div class="resource-bar">
+    <div>{{sales.length}}</div>
+    <div>COMPLETED ORDERS</div>
+  </div>
+  <div class="cards">
+    <app-sales-card *ngFor="let sale of sales" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+  </div>
+</ng-container>
 
 <!-- <div>{{ salesService.allSales$ | async | json }}</div> -->
