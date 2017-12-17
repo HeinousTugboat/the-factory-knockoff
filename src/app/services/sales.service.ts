@@ -22,19 +22,24 @@ export class SalesService {
   constructor(private dataService: DataService, private updateService: UpdateService) {
     this.updates$ = updateService.loop$.subscribe(this.tick.bind(this));
     this.sales = [
-      new SaleModel([]),
-      new SaleModel([]),
-      new SaleModel([]),
-      new SaleModel([]),
-      new SaleModel([])
+      new SaleModel(new Map)
     ];
     this.update();
+  }
+
+  public createSale(items: Map<ItemModel, number>): SaleModel {
+    const sale = new SaleModel(items);
+    this.sales.push(sale);
+    this.update();
+    console.log(sale.label + ':', sale);
+    return sale;
   }
 
   public update() {
     // this.allSales$.next(this.sales);
     this.allSales$.next(this.sales.filter(sale => (sale.isComplete || sale.isOpen || sale.isSold)));
   }
+
 
   private tick({ interval, value }: TimeInterval<number>) {
     if (!(value % 1000)) { this.update(); }
