@@ -1,7 +1,30 @@
-<div>
-  {{ sale.label }}
-  <ng-container *ngIf="sale.isOpen">O</ng-container>
-  <ng-container *ngIf="sale.isSold">S</ng-container>
-  <ng-container *ngIf="sale.isComplete">C</ng-container>
-  <button (click)="complete()">Complete</button>
-</div>
+<header>
+  <div class="label">ORDER {{ sale.label }}</div>
+  <button class="complete open" *ngIf="sale.isOpen || sale.isComplete" (click)="complete()">X</button>
+  <button class="complete sold" *ngIf="sale.isSold" (click)="complete()">O</button>
+</header>
+<section>
+  <div class="items">
+    <ul>
+      <li>
+        <div class="item-label">Item 1</div>
+        <div class="item-qty">300</div>
+      </li>
+      <li>
+          <div class="item-label">Item 2</div>
+          <div class="item-qty">1</div>
+        </li>
+      <li *ngFor="let item of sale.items">
+        <div class="item-label">Item</div>
+        <div class="item-qty">2</div>
+      </li>
+    </ul>
+  </div>
+  <app-spinner content="foo"></app-spinner>
+</section>
+<footer>
+  <div class="date" *ngIf="sale.isOpen">CREATED {{ sale.created | date:"MMM d HH:mm"}}</div>
+  <div class="date" *ngIf="sale.isSold">SOLD {{ sale.created | date}}</div>
+  <div class="date" *ngIf="sale.isComplete">PAID {{ sale.created | date}}</div>
+  <div class="total">$308.44</div>
+</footer>

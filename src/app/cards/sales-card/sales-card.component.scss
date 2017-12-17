@@ -1,0 +1,82 @@
+$red: #CC0202;
+$dark-red: #723030;
+$green: #03B300;
+$dark-green: #33692F;
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 4px;
+  font-size: 80%;
+}
+
+header,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  flex: 0 0 auto;
+  background: #322F2F;
+  box-sizing: border-box;
+}
+
+footer {
+  padding: 4px;
+}
+
+button {
+  width: 25px;
+  height: 20px;
+  border: 0;
+  color: white;
+}
+
+.label {
+  margin: 4px;
+}
+
+.open {
+  background: $red;
+}
+
+.sold {
+  background: $green;
+}
+
+.label,
+.date {
+  flex: 1 1 auto;
+}
+
+section {
+  display: flex;
+  background: #433F3F;
+}
+
+.items {
+  width: 65%;
+}
+ul {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 4px;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  margin: 2px 0;
+}
+
+app-spinner {
+  margin: 4px;
+}
+
+.total {
+  color: $green;
+}
