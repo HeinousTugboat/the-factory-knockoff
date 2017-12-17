@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { DataService } from '../../services/data.service';
 import { ItemModel } from '../../models/item.model';
+import { SalesService } from '../../services/sales.service';
 
 @Component({
   selector: 'app-inventory',
@@ -16,7 +17,7 @@ export class InventoryComponent implements OnInit, OnDestroy {
   totals: { buy: number, sell: number, net: number, qty: number | null, buyQty: number, sellQty: number }
     = { buy: 0, sell: 0, net: 0, qty: null, buyQty: 0, sellQty: 0 };
 
-  constructor(public dataService: DataService) { }
+  constructor(public dataService: DataService, public salesService: SalesService) { }
 
   toSellChange(item: ItemModel, amount: number) {
     const qty = this.toSell.get(item) || 0;
@@ -47,10 +48,11 @@ export class InventoryComponent implements OnInit, OnDestroy {
 
   sell() {
     this.updateTotals();
+    this.salesService.createSale(this.toSell);
 
-    for (const [item, qty] of Array.from(this.toSell.entries())) {
-      // item.current -= qty;
-    }
+    // for (const [item, qty] of Array.from(this.toSell.entries())) {
+    //   // item.current -= qty;
+    // }
     this.toSell = new Map;
     this.updateTotals();
   }
