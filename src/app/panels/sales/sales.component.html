@@ -1,5 +1,5 @@
 <!-- <p>{{items | json}}</p> -->
-<p> Sales time!</p>
+<!-- <p> Sales time!</p>
 <p>Time = Tier Mod * 0.12 * Quantity * Unit Price + 3.5 seconds</p>
 <ol>
   <li>T1 - 1</li>
@@ -8,18 +8,38 @@
   <li>T4 - 4?</li>
   <li>Builder - 5</li>
   <li>Tasker - ? 6 maybe..</li>
+</ol> -->
 
-</ol>
-<h2>Open Sales</h2>
-<ng-container *ngFor="let sale of salesService.openSales$ | async">
-  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</ng-container>
-<h2>Sold</h2>
-<ng-container *ngFor="let sale of salesService.soldSales$ | async">
-  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</ng-container>
-<h2>Complete Sales</h2>
-<ng-container *ngFor="let sale of salesService.completeSales$ | async">
-  <app-sales-card [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
-</ng-container>
-<div>{{ salesService.allSales$ | async | json }}</div>
+<div class="resource-bar">
+  <div *ngIf="(salesService.openSales$ | async)?.length as len; else noOpen">{{ len }}</div>
+  <ng-template #noOpen>
+    <div>0</div>
+  </ng-template>
+  <div>OPEN ORDERS</div>
+</div>
+<div class="cards">
+  <app-sales-card *ngFor="let sale of salesService.openSales$ | async" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+</div>
+
+<div class="resource-bar">
+  <div *ngIf="(salesService.soldSales$ | async)?.length as len; else noSold">{{ len }}</div>
+  <ng-template #noSold>
+    <div>0</div>
+  </ng-template>
+  <div>SOLD ORDERS</div>
+</div>
+<div class="cards">
+  <app-sales-card *ngFor="let sale of salesService.soldSales$ | async" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+</div>
+<div class="resource-bar">
+  <div *ngIf="(salesService.completeSales$ | async)?.length as len; else noComplete">{{ len }}</div>
+  <ng-template #noComplete>
+    <div>0</div>
+  </ng-template>
+  <div>COMPLETED ORDERS</div>
+</div>
+<div class="cards">
+  <app-sales-card *ngFor="let sale of salesService.completeSales$ | async; index as i" [sale]="sale" (saleChange)="salesService.update($event)"></app-sales-card>
+</div>
+
+<!-- <div>{{ salesService.allSales$ | async | json }}</div> -->

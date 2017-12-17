@@ -1,0 +1,33 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.resource-bar {
+  font-size: 80%;
+  margin: 4px 0;
+  padding: 4px;
+  display: flex;
+  flex: 0 0 auto;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: #433F3F;
+  border-bottom: 2px solid white;
+}
+
+.cards {
+  // flex: 1 1 auto;
+  // display: flex;
+  // flex-wrap: wrap;
+  // width: 100%;
+  // max-width: 80%;
+  flex: 1 1 auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(416px, 1fr));
+  justify-items: center;
+}
