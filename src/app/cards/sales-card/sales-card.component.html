@@ -6,25 +6,25 @@
 <section>
   <div class="items">
     <ul>
-      <li>
+      <!-- <li>
         <div class="item-label">Item 1</div>
         <div class="item-qty">300</div>
       </li>
       <li>
           <div class="item-label">Item 2</div>
           <div class="item-qty">1</div>
-        </li>
-      <li *ngFor="let item of sale.items">
-        <div class="item-label">Item</div>
-        <div class="item-qty">2</div>
+        </li> -->
+      <li *ngFor="let item of sale.items.entries()">
+        <div class="item-label">{{item[0].name}}</div>
+        <div class="item-qty">{{item[1]}}</div>
       </li>
     </ul>
   </div>
-  <app-spinner content="foo"></app-spinner>
+  <app-spinner content="{{sale.duration/1000 | number:'1.0-0'}}"></app-spinner>
 </section>
 <footer>
   <div class="date" *ngIf="sale.isOpen">CREATED {{ sale.created | date:"MMM d HH:mm"}}</div>
   <div class="date" *ngIf="sale.isSold">SOLD {{ sale.created | date}}</div>
   <div class="date" *ngIf="sale.isComplete">PAID {{ sale.created | date}}</div>
-  <div class="total">$308.44</div>
+  <div class="total">{{sale.value | currency}}</div>
 </footer>
