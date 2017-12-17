@@ -8,7 +8,7 @@ export class SaleModel {
   isSold = false;
   isComplete = false;
 
-  constructor(items: ItemModel[]) {
+  constructor(public items: ItemModel[]) {
 
   }
 }
