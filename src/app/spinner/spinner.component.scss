@@ -1,0 +1,75 @@
+:host {
+  display: block;
+  overflow: hidden;
+  background: #433F3F;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.spinner {
+  border: 5px solid #726F6F;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  animation: 800ms progress-indicator steps(1, end) infinite;
+  &:after {
+    content: ' ';
+    position: absolute;
+    left: -2px;
+    height: 55px;
+    width: 3px;
+    background: #433F3F;
+    transform-origin: top left;
+    transform: rotate(-45deg);
+  }
+  &:before {
+    content: ' ';
+    position: absolute;
+    right: -2px;
+    height: 55px;
+    width: 3px;
+    background: #433F3F;
+    transform-origin: top right;
+    transform: rotate(45deg);
+  }
+}
+
+.content {
+  position: absolute;
+  top: 14px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: inherit;
+  font-size: 12px;
+  display: inline-block;
+  z-index: 100;
+}
+
+@keyframes progress-indicator {
+  0%,
+  25% {
+    border-color: #726F6F;
+    border-top-color: white;
+  }
+  25%,
+  50% {
+    border-color: #726F6F;
+    border-right-color: white;
+  }
+  50%,
+  75% {
+    border-color: #726F6F;
+    border-bottom-color: white;
+  }
+  75%,
+  100% {
+    border-color: #726F6F;
+    border-left-color: white;
+  }
+}

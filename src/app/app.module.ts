@@ -19,6 +19,7 @@ import { RecipeCardComponent } from './cards/recipe-card/recipe-card.component';
 import { SalesCardComponent } from './cards/sales-card/sales-card.component';
 import { UpdateService } from './services/update.service';
 import { SalesService } from './services/sales.service';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SalesService } from './services/sales.service';
     BuildStepsGraphComponent,
     AccountBalanceGraphComponent,
     RecipeCardComponent,
-    PurchaseCardComponent
+    PurchaseCardComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
