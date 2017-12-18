@@ -20,7 +20,7 @@
       </li>
     </ul>
   </div>
-  <app-spinner content="{{sale.duration/1000 | number:'1.0-0'}}"></app-spinner>
+  <app-spinner *ngIf="sale.remaining as dur" content="{{dur | salesFormat}}"></app-spinner>
 </section>
 <footer>
   <div class="date" *ngIf="sale.isOpen">CREATED {{ sale.created | date:"MMM d HH:mm"}}</div>
