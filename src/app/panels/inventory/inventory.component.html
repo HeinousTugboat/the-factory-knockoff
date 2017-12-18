@@ -16,18 +16,12 @@
     </app-item-card>
   </div>
   <div class="totals">
-    <div class="buy">BUY:
-      <span [class.is-negative]="totals.buy < 0">{{totals.buy | currency}}</span>
-    </div>
-    <div class="sell">SELL:
-      <span [class.is-positive]="totals.sell > 0">{{totals.sell | currency}}</span>
-    </div>
-    <div class="net">NET:
-      <span [class.is-positive]="totals.net > 0" [class.is-negative]="totals.net < 0">{{totals.buy + totals.sell | currency}}</span>
-    </div>
+    <div class="sell-qty"> {{totals.sellQty}} ITEMS </div>
+    <div class="sell" [class.is-positive]="totals.sell > 0">{{totals.sell | currency}}</div>
+    <div class="timer">{{totals.dur | salesFormat:'long'}} </div>
   </div>
   <div class="buy-sell-bar">
-    <div class="buy-sell" *ngIf="totals.qty !== null" (click)="sell()">BUY/SELL ITEMS [+{{totals.buyQty}}/{{totals.sellQty}}]</div>
-    <div class="no-selected" *ngIf="totals.qty === null">NO ITEMS SELECTED</div>
+    <div class="buy-sell" *ngIf="totals.sellQty" (click)="sell()">CREATE SALES ORDER</div>
+    <div class="no-selected" *ngIf="!totals.sellQty">NO ITEMS SELECTED</div>
   </div>
 </ng-container>
