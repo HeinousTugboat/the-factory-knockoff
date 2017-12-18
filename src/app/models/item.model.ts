@@ -73,8 +73,8 @@ export class ItemModel {
   static list: Map<string, ItemModel> = new Map;
   available = false;
   retail = false;
-  // current = 0;
-  current = 100;
+  // current = 100;
+  current = 0;
   total = 0;
   buyPrice: number;
 

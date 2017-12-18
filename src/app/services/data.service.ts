@@ -8,7 +8,8 @@ import { RecipeModel } from '../models/recipe.model';
 export class DataService {
   items$: BehaviorSubject<ItemModel[]>;
   recipes$: BehaviorSubject<RecipeModel[]>;
-  currentMoney = 100e23;
+  // currentMoney = 100e23;
+  currentMoney = 100;
   totalEarned = 100;
   constructor() {
     this.items$ = new BehaviorSubject(ItemModel.init());

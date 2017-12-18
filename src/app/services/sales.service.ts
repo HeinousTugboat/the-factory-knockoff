@@ -22,7 +22,7 @@ export class SalesService {
   constructor(private dataService: DataService, private updateService: UpdateService) {
     this.updates$ = updateService.loop$.subscribe(this.tick.bind(this));
     this.sales = [
-      new SaleModel(new Map)
+      // new SaleModel(new Map)
     ];
     this.update();
   }
