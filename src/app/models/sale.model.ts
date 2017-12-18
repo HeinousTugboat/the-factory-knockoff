@@ -1,4 +1,5 @@
 import { ItemModel, Tiers } from './item.model';
+import { DataService } from '../services/data.service';
 
 export class SaleModel {
   label: string = Math.floor(Math.random() * 2 ** 32).toString(16).toUpperCase();
@@ -21,6 +22,15 @@ export class SaleModel {
     }
     this.duration = SaleModel.calculateDuration(items);
     this.due = this.created + this.duration;
+  }
+
+  get remaining() {
+    const now = Date.now();
+    if (now <= this.due) {
+      return this.due - now;
+    } else {
+      return 0;
+    }
   }
 
   static calculateDuration(items: Map<ItemModel, number>): number {
