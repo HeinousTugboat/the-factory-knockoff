@@ -35,6 +35,23 @@ export class SalesService {
     return sale;
   }
 
+  public processSale(sale: SaleModel) {
+    if (sale.isOpen) {
+      for (const [item, qty] of sale.items) {
+        item.current += qty;
+      }
+      sale.isComplete = false;
+    } else if (sale.isSold) {
+      this.dataService.currentMoney += sale.value;
+      sale.isComplete = true;
+    } else if (sale.isComplete) {
+      sale.isComplete = false;
+    }
+    sale.isSold = false;
+    sale.isOpen = false;
+    this.update();
+  }
+
   public update() {
     // this.allSales$.next(this.sales);
     this.allSales$.next(this.sales.filter(sale => (sale.isComplete || sale.isOpen || sale.isSold)));
@@ -42,7 +59,15 @@ export class SalesService {
 
 
   private tick({ interval, value }: TimeInterval<number>) {
-    if (!(value % 1000)) { this.update(); }
+    const now = Date.now();
+    this.sales.filter(sale => (sale.isOpen)).forEach(sale => {
+      if (sale.remaining <= 0) {
+        sale.isOpen = false;
+        sale.isSold = true;
+      }
+      this.update();
+    });
+    // if (!(value % 1000)) { this.update(); }
   }
 
 }
