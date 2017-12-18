@@ -1,7 +1,7 @@
 <header>
   <div class="label">ORDER {{ sale.label }}</div>
-  <button class="complete open" *ngIf="sale.isOpen || sale.isComplete" (click)="complete()">X</button>
-  <button class="complete sold" *ngIf="sale.isSold" (click)="complete()">O</button>
+  <button class="complete open" *ngIf="sale.isOpen || sale.isComplete" (click)="process()">X</button>
+  <button class="complete sold" *ngIf="sale.isSold" (click)="process()">O</button>
 </header>
 <section>
   <div class="items">

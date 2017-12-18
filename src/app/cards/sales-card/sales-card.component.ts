@@ -17,22 +17,23 @@ export class SalesCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  complete() {
+  process() {
+    this.salesService.processSale(this.sale);
     // TODO: This should definitely be in SaleModel instead of here.
-    if (this.sale.isOpen) {
-      this.sale.isOpen = false;
-      this.sale.isSold = true;
-      this.sale.isComplete = false;
-    } else if (this.sale.isSold) {
-      this.sale.isOpen = false;
-      this.sale.isSold = false;
-      this.sale.isComplete = true;
-    } else {
-      this.sale.isOpen = false;
-      this.sale.isSold = false;
-      this.sale.isComplete = false;
-    }
-    this.saleChange.emit(this.sale);
+    // if (this.sale.isOpen) {
+    //   this.sale.isOpen = false;
+    //   this.sale.isSold = true;
+    //   this.sale.isComplete = false;
+    // } else if (this.sale.isSold) {
+    //   this.sale.isOpen = false;
+    //   this.sale.isSold = false;
+    //   this.sale.isComplete = true;
+    // } else {
+    //   this.sale.isOpen = false;
+    //   this.sale.isSold = false;
+    //   this.sale.isComplete = false;
+    // }
+    // this.saleChange.emit(this.sale);
   }
 
 }
