@@ -1,9 +1,15 @@
-# Change Log
+<a name="Unreleased"></a>
+# [Unreleased](https://github.com/HeinousTugboat/the-factory-knockoff/compare/v0.1.0...beae280) (2017-12-21)
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+### Features
+
+* adds debug variables back in ([beae280](https://github.com/HeinousTugboat/the-factory-knockoff/commit/beae280))
+
+
 
 <a name="0.1.0"></a>
-# 0.1.0 (2017-12-21)
+# [0.1.0](https://github.com/HeinousTugboat/the-factory-knockoff/compare/b63fb2b...v0.1.0) (2017-12-21)
 
 
 ### Bug Fixes
@@ -71,3 +77,6 @@ All notable changes to this project will be documented in this file. See [standa
 * updates sale cards to show actual duration and use map for items ([bac716e](https://github.com/HeinousTugboat/the-factory-knockoff/commit/bac716e))
 * **manu:** first pass at recipe cards ([1369b99](https://github.com/HeinousTugboat/the-factory-knockoff/commit/1369b99))
 * **scss:** adds is-positive and is-negative classes globally ([8343b19](https://github.com/HeinousTugboat/the-factory-knockoff/commit/8343b19))
+
+
+
