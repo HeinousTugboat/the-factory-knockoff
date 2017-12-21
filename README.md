@@ -1,5 +1,12 @@
 # TheFactory
 
+[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+
+My knock-off of The Factory. Everything here's handwritten, nothing but numbers, names and general look are copied.
+
+
+# Angular CLI Stuff
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
 
 ## Development server
